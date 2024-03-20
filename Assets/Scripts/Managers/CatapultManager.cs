@@ -1,6 +1,5 @@
 using System;using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class CatapultManager
@@ -100,6 +99,7 @@ public class CatapultManager
                 //zombiesData.zombies.Remove(zombie);
                 zombie.GetComponent<Animator>().SetTrigger("Die");
                 destroyZombieCallback?.Invoke(zombie.gameObject);
+                zombiesData.zombies.Remove(zombie.gameObject);
                 //GameManager.RemoveObject(zombie.gameObject, 4f);
             }
             
